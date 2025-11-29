@@ -1,0 +1,286 @@
+/* Universal Reset and Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #262626;
+}
+
+a {
+    color: #00376b;
+    text-decoration: none;
+}
+
+/* --- View Control using CSS Target --- */
+        
+/* 1. Hide the Feed View by default */
+#feed-view {
+    display: none;
+}
+
+/* 2. Hide the Sign Up form by default */
+#signup-form {
+    display: none;
+}
+
+/* 3. When the URL fragment is #feed-view, show the feed and hide auth */
+:target#feed-view {
+    display: block;
+}
+
+:target#feed-view ~ #auth-view { /* Selects #auth-view when #feed-view is the target */
+    display: none;
+}
+
+/* 4. When the URL fragment is #signup-form, show the signup form and hide the login form */
+:target#signup-form {
+    display: block;
+}
+
+:target#signup-form ~ #login-form { /* Selects #login-form when #signup-form is the target */
+    display: none;
+}
+
+
+/* --- Authentication Page Styling --- */
+
+#auth-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#auth-view h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #4a4a4a;
+}
+
+.form-card {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 40px;
+    width: 300px;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.primary-btn {
+    background-color: #0095f6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background-color: #0079c2;
+}
+
+.switch-form {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.footer-note {
+    margin-top: 40px;
+    font-size: 0.8em;
+    color: #8e8e8e;
+}
+
+/* --- Feed Page Styling --- */
+
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 935px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #262626;
+}
+
+.search-bar {
+    padding: 8px 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 0.9em;
+    width: 200px;
+}
+
+nav a {
+    margin-left: 15px;
+    font-weight: 600;
+}
+
+.main-layout {
+    max-width: 935px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 0 20px;
+}
+
+.feed {
+    flex-grow: 1;
+    max-width: 614px;
+}
+
+.sidebar {
+    width: 293px;
+}
+
+.post {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #0095f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.post-media {
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.media-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8e8e8e;
+    font-style: italic;
+}
+
+.post-actions {
+    padding: 8px 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: #262626;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.post-caption {
+    padding: 0 10px 10px;
+    font-size: 0.9em;
+}
+
+.comments-section {
+    border-top: 1px solid #efefef;
+    padding: 10px;
+}
+
+.comment-item {
+    margin: 5px 0;
+    font-size: 0.85em;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Sidebar Styling */
+.profile-card, .upload-area, .suggestions-card {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.upload-area input[type="file"], .upload-area input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+
+.upload-btn {
+    margin-top: 5px;
+}
+
+.suggestions-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.suggestions-card li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}

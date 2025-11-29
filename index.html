@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoShare - Separated Pure HTML/CSS App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="auth-view">
+        <div class="auth-container">
+            <h1>PhotoShare</h1>
+            <div class="form-card">
+                <h2>Log In</h2>
+                <form action="#feed-view" method="GET"> 
+                    <input type="text" placeholder="Username or Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="primary-btn">Log In</button>
+                </form>
+                <p class="switch-form">Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+            <p class="footer-note">Pure HTML/CSS Frontend Concept.</p>
+        </div>
+    </div>
+
+    <div id="feed-view">
+        <header class="main-header">
+            <div class="header-content">
+                <h1 class="logo">PhotoShare</h1>
+                <input type="text" placeholder="Search..." class="search-bar">
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <main class="feed">
+                <h2>Photo/Video Feed</h2>
+
+                <article class="post">
+                    <div class="post-header">
+                        <span class="user-avatar">P</span>
+                        <span class="username">Photographer_X</span>
+                    </div>
+                    <div class="post-media">
+                        <div class="media-placeholder">[Image/Video Content Here]</div>
+                    </div>
+                    <div class="post-actions">
+                        <button class="action-btn static-like">❤️ Like (15)</button>
+                        <button class="action-btn">💬 Comment</button>
+                        <button class="action-btn">Share</button>
+                    </div>
+                    <p class="post-caption">**Absolutely stunning sunset shot from the mountain climb!** #photography #nature</p>
+
+                    <div class="comments-section">
+                        <p class="comment-item"><strong>UserA:</strong> Amazing light!</p>
+                        <p class="comment-item"><strong>UserB:</strong> Wish I was there.</p>
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                    </div>
+                </article>
+
+                <article class="post">
+                    <div class="post-header">
+                        <span class="user-avatar">V</span>
+                        <span class="username">VideoArt_Pro</span>
+                    </div>
+                    <div class="post-media">
+                        <div class="media-placeholder">[Another Piece of Media]</div>
+                    </div>
+                     <div class="post-actions">
+                        <button class="action-btn static-like">❤️ Like (42)</button>
+                        <button class="action-btn">💬 Comment</button>
+                        <button class="action-btn">Share</button>
+                    </div>
+                    <p class="post-caption">**New time-lapse video of the city lights is up!** #videoart #city</p>
+
+                    <div class="comments-section">
+                        <p class="comment-item"><strong>UserC:</strong> Great transitions!</p>
+                        <input type="text" placeholder="Add a comment..." class="comment-input">
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <h3>My Profile</h3>
+                    <p><strong>Username:</strong> CurrentUser</p>
+                    <p><strong>Posts:</strong> 12</p>
+                    <button class="primary-btn">Edit Profile</button>
+                </div>
+
+                <div class="upload-area">
+                    <h3>Upload New Media</h3>
+                    <input type="file" id="media-upload">
+                    <input type="text" placeholder="Add a caption...">
+                    <button class="primary-btn upload-btn">Upload</button>
+                </div>
+
+                <div class="suggestions-card">
+                     <h3>Suggested Users</h3>
+                     <ul>
+                        <li>Artist_1</li>
+                        <li>Creator_2</li>
+                     </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
